@@ -1,0 +1,6 @@
+# A published skill is executable instruction to every connected agent, so every change here
+# needs a code owner's review. Pair this with branch protection on `main`
+# (Settings → Branches → require a pull request + require review from Code Owners).
+
+*           @LaurenDebruyn
+/skills/    @LaurenDebruyn
