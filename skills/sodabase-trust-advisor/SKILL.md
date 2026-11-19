@@ -3,7 +3,7 @@ name: sodabase-trust-advisor
 description: Check whether Supabase data is trustworthy before building on it, and set up pipeline checks for Edge Functions that write to it. Use before writing code that reads or writes a database table, when a query returns surprising or empty results, when the user asks whether data is right, current, or complete, and when building or changing a Supabase Edge Function that writes rows.
 metadata:
   author: sodabase
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # Sodabase trust advisor
@@ -101,7 +101,7 @@ owners or admins can do this, stop and tell the person who can.
    choose "Replace the current token" on that page (which retires the pasted one), run the shown command again and
    redeploy the function themselves — it reports nothing until then.
 4. **Get the rules file:** run `npx sodabase rules pull --project <project ref>`. If it says you're not signed in,
-   ask the person to run `npx sodabase --login` in a separate terminal window — not with `!` or any shell you control, because sign-in opens a browser and needs a real terminal. Don't run it yourself. It saves `supabase/functions/_shared/sodabase.rules.yml` and lists the file in each
+   ask the person to run `npx sodabase login` in a separate terminal window — not with `!` or any shell you control, because sign-in opens a browser and needs a real terminal. Don't run it yourself; once they have, run `rules pull` again. It saves `supabase/functions/_shared/sodabase.rules.yml` and lists the file in each
    function's `static_files` in `supabase/config.toml`. Only if the CLI can't be used: call
    `pipeline_rules(<project ref>)`, save its output verbatim to that path, **and** add
    `static_files = ["./functions/_shared/sodabase.rules.yml"]` under each function's `[functions.<name>]` in
